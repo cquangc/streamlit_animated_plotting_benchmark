@@ -1,5 +1,5 @@
 import numpy as np
-import plotly.express as px
+#import plotly.express as px
 import streamlit as st
 import altair as alt
 #import matplotlib.pyplot as plt
@@ -33,7 +33,6 @@ if st.button("Animate"):
             fig1 = px.scatter(data,x="x",y="y")
             drawn_fig1.plotly_chart(fig1,use_container_width = True)
             frameEndTime = time.time()
-            extraTime = extraTime + 1/FPS - (frameEndTime-frameDrawTime)
             try:
                 time.sleep(1/FPS-(frameEndTime-frameStartTime))
             except:
@@ -51,7 +50,6 @@ if st.button("Animate"):
             fig1 = alt.Chart(data).mark_point().encode(x="x",y="y")
             drawn_fig1.altair_chart(fig1,use_container_width = True)
             frameEndTime = time.time()
-            extraTime = extraTime + 1/FPS - (frameEndTime-frameDrawTime)
             try:
                 time.sleep(1/FPS-(frameEndTime-frameStartTime))
             except:
@@ -69,15 +67,7 @@ if st.button("Animate"):
             fig1 = plt.scatter(X,Y)
             drawn_fig1.pyplot()
             frameEndTime = time.time()
-            extraTime = extraTime + 1/FPS - (frameEndTime-frameDrawTime)
             try:
                 time.sleep(1/FPS-(frameEndTime-frameStartTime))
             except:
-                time.sleep(1/FPS)          
-
-    extraTimePerFrame = extraTime/(FPS*animTime)
-
-    if extraTimePerFrame > 0:
-        st.success("Real time animation sucessful." +  " Extra time per frame was " + str(extraTimePerFrame))
-    else:
-        st.error("Real time animation failure." +  " Short time per frame was " + str(extraTimePerFrame))
+                time.sleep(1/FPS)
