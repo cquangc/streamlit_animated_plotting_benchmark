@@ -1,5 +1,5 @@
-plotly
 streamlit
+plotly
 altair
 matplotlib
 pandas
