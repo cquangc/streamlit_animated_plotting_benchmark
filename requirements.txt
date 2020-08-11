@@ -1,7 +1,7 @@
 streamlit
+plotly
 altair
 matplotlib
 pandas
 time
 numpy
-plotly
