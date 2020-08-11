@@ -3,5 +3,4 @@ matplotlib
 plotly
 altair
 pandas
-time
 numpy
