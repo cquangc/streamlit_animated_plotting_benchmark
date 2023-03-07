@@ -57,7 +57,7 @@ if st.button("Animate"):
 
     if mode == "Matplotlib":
         fig1 = plt.scatter(X,Y)
-        drawn_fig1 = st.pyplot()
+        drawn_fig1 = st.pyplot(fig1)
         for i in range(FPS*animTime):
             frameStartTime = time.time()
             X = X +1.0/FPS
